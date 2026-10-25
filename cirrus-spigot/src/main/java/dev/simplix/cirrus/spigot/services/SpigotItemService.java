@@ -29,9 +29,8 @@ public class SpigotItemService extends ItemService {
         }
         try {
             return Material.valueOf(name);
-        } catch (IllegalArgumentException exception) {
+        } catch (IllegalArgumentException _) {
             return null;
         }
     }
-
 }

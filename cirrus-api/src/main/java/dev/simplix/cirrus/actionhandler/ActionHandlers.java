@@ -9,10 +9,11 @@ import dev.simplix.cirrus.model.CallResult;
 import dev.simplix.cirrus.model.Click;
 import dev.simplix.cirrus.item.CirrusBaseItemStack;
 import dev.simplix.cirrus.item.CirrusItemType;
-import java.util.function.Function;
-import java.util.function.Supplier;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * The ActionHandlers` class is a utility class that provides a set of common {@link ActionHandler}

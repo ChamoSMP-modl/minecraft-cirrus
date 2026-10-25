@@ -56,7 +56,7 @@ public abstract class AbstractSearchableBrowser<T> extends AbstractBrowser<T> {
     protected CirrusItem searchItem() {
         return CirrusItem
             .of(CirrusItemType.COMPASS)
-            .displayName(CirrusChatElement.ofLegacyText("&6Search"))
+            .displayName(CirrusChatElement.ofMiniMessage("&6Search"))
             .lore(compassLore())
             .actionHandler("Search");
     }
@@ -70,7 +70,7 @@ public abstract class AbstractSearchableBrowser<T> extends AbstractBrowser<T> {
      */
     protected CirrusChatElement[] compassLore() {
         return new CirrusChatElement[]{
-            CirrusChatElement.ofLegacyText("&7Search for a value"),
+            CirrusChatElement.ofMiniMessage("&7Search for a value"),
             };
     }
 

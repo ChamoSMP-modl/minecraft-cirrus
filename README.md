@@ -7,7 +7,7 @@ Velocity/BungeeCord menus. We plan to keep this working for all client versions 
 
 ## Maven/Gradle Dependency
 
-The `[PLATFORM]` placeholder can be replaced with `spigot`, `bungeecord`, or `velocity`. Forks of these software are covered under the parent, so Paper is covered under Spigot, and Waterfall is covered under BungeeCord.
+The `[PLATFORM]` placeholder can be replaced with `spigot`, or `velocity`. Forks of these software are covered under the parent, so Paper is covered under Spigot, and Waterfall is covered under BungeeCord.
 
 **YOU MUST INCLUDE [PACKETEVENTS](https://github.com/retrooper/packetevents) AS A DEPENDENCY IN YOUR PLUGIN!**
 You can shade it or require it to be installed on the server. For our library, Cirrus, you should just shade it.

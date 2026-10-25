@@ -3,7 +3,7 @@ package dev.simplix.cirrus.menus;
 import dev.simplix.cirrus.model.BusinessItemMap;
 import dev.simplix.cirrus.model.CallResult;
 import dev.simplix.cirrus.menu.CirrusInventoryType;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The BrowserSchematic is used to define the properties of a menu in the Cirrus framework. It

@@ -9,16 +9,15 @@ import org.bukkit.entity.Player;
 
 @Slf4j
 public class SpigotInventoryPacketListener extends AbstractInventoryPacketListener {
-
     public SpigotInventoryPacketListener(InventoryTracker inventoryTracker, SpigotMenuBuildService menuBuildService) {
         super(inventoryTracker, menuBuildService);
     }
 
     @Override
     protected UUID getPlayerUuid(Object playerHandle) {
-        if (!(playerHandle instanceof Player)) {
+        if (!(playerHandle instanceof Player player)) {
             return null;
         }
-        return ((Player) playerHandle).getUniqueId();
+        return player.getUniqueId();
     }
 }

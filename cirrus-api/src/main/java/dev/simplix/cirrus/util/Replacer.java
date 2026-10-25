@@ -1,6 +1,6 @@
 package dev.simplix.cirrus.util;
 
-import lombok.NonNull;
+import org.jspecify.annotations.NonNull;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

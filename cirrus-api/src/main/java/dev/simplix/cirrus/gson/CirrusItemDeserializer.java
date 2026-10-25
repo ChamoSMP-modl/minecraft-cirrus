@@ -59,7 +59,7 @@ public class CirrusItemDeserializer implements JsonDeserializer<CirrusItem> {
             .actionHandler(actionHandler);
 
         if (displayName != null) {
-            item.displayName(CirrusChatElement.ofLegacyText(displayName));
+            item.displayName(CirrusChatElement.ofMiniMessage(displayName));
         }
 
         if (actionArguments != null) {
@@ -68,7 +68,7 @@ public class CirrusItemDeserializer implements JsonDeserializer<CirrusItem> {
 
         if (lore != null) {
             item.loreElements(lore.stream()
-                .map(CirrusChatElement::ofLegacyText)
+                .map(CirrusChatElement::ofMiniMessage)
                 .collect(Collectors.toList()));
         }
 

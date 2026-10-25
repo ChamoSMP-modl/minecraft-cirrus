@@ -2,13 +2,12 @@ package dev.simplix.cirrus.spigot.services.converters;
 
 import dev.simplix.cirrus.item.CirrusItemType;
 import java.util.function.Function;
-import lombok.NonNull;
+import org.jspecify.annotations.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.bukkit.Material;
 
 @Slf4j
 public class ItemTypeMaterialConverter implements Function<CirrusItemType, Material> {
-
     @Override
     public Material apply(@NonNull CirrusItemType src) {
         try {
@@ -22,5 +21,4 @@ public class ItemTypeMaterialConverter implements Function<CirrusItemType, Mater
             return Material.STONE;
         }
     }
-
 }

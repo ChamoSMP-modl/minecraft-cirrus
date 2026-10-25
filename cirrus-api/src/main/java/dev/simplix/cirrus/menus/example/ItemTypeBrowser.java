@@ -79,8 +79,8 @@ public class ItemTypeBrowser extends AbstractBrowser<CirrusItemType> {
             CirrusItem
                 .of(
                     CirrusItemType.ACACIA_DOOR,
-                    CirrusChatElement.ofLegacyText("§7Back"),
-                    CirrusChatElement.ofLegacyText("§7Go back to the previous menu"))
+                    CirrusChatElement.ofMiniMessage("§7Back"),
+                    CirrusChatElement.ofMiniMessage("§7Go back to the previous menu"))
                 .actionHandler("back")
         );
     }

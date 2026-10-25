@@ -22,16 +22,16 @@ public class Items {
             return CirrusItem
                 .of(
                     LIME_DYE,
-                    CirrusChatElement.ofLegacyText("§aPrevious page"),
-                    CirrusChatElement.ofLegacyText("§7Click to go to the previous page"),
-                    CirrusChatElement.ofLegacyText("§7Goto page §8" + previous + " §7of §8" + totalPages)
+                    CirrusChatElement.ofMiniMessage("§aPrevious page"),
+                    CirrusChatElement.ofMiniMessage("§7Click to go to the previous page"),
+                    CirrusChatElement.ofMiniMessage("§7Goto page §8" + previous + " §7of §8" + totalPages)
                 )
                 .actionHandler(AbstractBrowser.PREVIOUS_PAGE_ACTION_HANDLER);
         } else {
             return CirrusItem.of(
                 GRAY_DYE,
-                CirrusChatElement.ofLegacyText("§aPrevious page"),
-                CirrusChatElement.ofLegacyText("§7There is no previous page"));
+                CirrusChatElement.ofMiniMessage("§aPrevious page"),
+                CirrusChatElement.ofMiniMessage("§7There is no previous page"));
         }
     }
 
@@ -42,15 +42,15 @@ public class Items {
         if (browser.hasNextPage()) {
             return CirrusItem.of(
                 LIME_DYE,
-                CirrusChatElement.ofLegacyText("§aNext page"),
-                CirrusChatElement.ofLegacyText("§7Click to go to the next page"),
-                CirrusChatElement.ofLegacyText("§7Goto page §8" + nextPageNumber + " §7of §8" + totalPages)
+                CirrusChatElement.ofMiniMessage("§aNext page"),
+                CirrusChatElement.ofMiniMessage("§7Click to go to the next page"),
+                CirrusChatElement.ofMiniMessage("§7Goto page §8" + nextPageNumber + " §7of §8" + totalPages)
             ).actionHandler(AbstractBrowser.NEXT_PAGE_ACTION_HANDLER);
         } else {
             return CirrusItem.of(
                 GRAY_DYE,
-                CirrusChatElement.ofLegacyText("§aNext page"),
-                CirrusChatElement.ofLegacyText("§7There is no next page"));
+                CirrusChatElement.ofMiniMessage("§aNext page"),
+                CirrusChatElement.ofMiniMessage("§7There is no next page"));
         }
     }
 

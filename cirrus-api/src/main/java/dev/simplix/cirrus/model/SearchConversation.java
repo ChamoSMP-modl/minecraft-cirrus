@@ -2,7 +2,7 @@ package dev.simplix.cirrus.model;
 
 import dev.simplix.cirrus.menu.Menu;
 import java.util.function.Supplier;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

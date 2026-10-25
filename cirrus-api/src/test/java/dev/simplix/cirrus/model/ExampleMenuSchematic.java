@@ -11,20 +11,20 @@ public class ExampleMenuSchematic extends SimpleMenuSchematic {
     public ExampleMenuSchematic() {
         set(CirrusItem
             .of(CirrusItemType.ITEM_FRAME)
-            .displayName(CirrusChatElement.ofLegacyText("item-1"))
-            .lore(CirrusChatElement.ofLegacyText("test123"))
+            .displayName(CirrusChatElement.ofMiniMessage("item-1"))
+            .lore(CirrusChatElement.ofMiniMessage("test123"))
             .actionHandler("sheep")
             .slot(0));
         set(Items
-            .withWaveEffect(CirrusItemType.ITEM_FRAME, "test", CirrusChatElement.ofLegacyText("test123"))
-            .displayName(CirrusChatElement.ofLegacyText("item-2"))
-            .lore(CirrusChatElement.ofLegacyText("test123"))
+            .withWaveEffect(CirrusItemType.ITEM_FRAME, "test", CirrusChatElement.ofMiniMessage("test123"))
+            .displayName(CirrusChatElement.ofMiniMessage("item-2"))
+            .lore(CirrusChatElement.ofMiniMessage("test123"))
             .actionHandler("sheep")
             .slot(1));
         set(Items
-            .withSpectrumEffect(CirrusItemType.ITEM_FRAME, "test", CirrusChatElement.ofLegacyText("test123"))
-            .displayName(CirrusChatElement.ofLegacyText("item-3"))
-            .lore(CirrusChatElement.ofLegacyText("test123"))
+            .withSpectrumEffect(CirrusItemType.ITEM_FRAME, "test", CirrusChatElement.ofMiniMessage("test123"))
+            .displayName(CirrusChatElement.ofMiniMessage("item-3"))
+            .lore(CirrusChatElement.ofMiniMessage("test123"))
             .actionHandler("sheep")
             .slot(2));
     }

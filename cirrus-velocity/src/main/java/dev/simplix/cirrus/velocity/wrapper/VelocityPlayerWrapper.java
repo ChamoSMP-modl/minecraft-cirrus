@@ -5,16 +5,16 @@ import com.github.retrooper.packetevents.protocol.player.ClientVersion;
 import com.github.retrooper.packetevents.protocol.player.User;
 import com.github.retrooper.packetevents.protocol.sound.SoundCategory;
 import com.github.retrooper.packetevents.protocol.sound.Sounds;
-import com.github.retrooper.packetevents.util.Vector3i;
+import com.github.retrooper.packetevents.util.Vector3d;
 import com.github.retrooper.packetevents.wrapper.play.server.WrapperPlayServerSoundEffect;
 import com.velocitypowered.api.proxy.Player;
-import dev.simplix.cirrus.Utils;
 import dev.simplix.cirrus.model.CirrusSoundCategory;
 import dev.simplix.cirrus.model.SimpleSound;
 import dev.simplix.cirrus.player.CirrusPlayerWrapper;
-import java.util.UUID;
 import lombok.RequiredArgsConstructor;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+
+import java.util.UUID;
 
 @RequiredArgsConstructor
 public class VelocityPlayerWrapper implements CirrusPlayerWrapper {
@@ -36,9 +36,10 @@ public class VelocityPlayerWrapper implements CirrusPlayerWrapper {
     public int protocolVersion() {
         try {
             User user = PacketEvents.getAPI().getPlayerManager().getUser(player);
-
-            return user.getClientVersion().getProtocolVersion();
-        } catch (Throwable ignored) {
+            if (user != null) {
+                return user.getClientVersion().getProtocolVersion();
+            }
+        } catch (Throwable _) {
         }
         return ClientVersion.getLatest().getProtocolVersion();
     }
@@ -48,6 +49,8 @@ public class VelocityPlayerWrapper implements CirrusPlayerWrapper {
         User user = PacketEvents.getAPI().getPlayerManager().getUser(player);
 
         try {
+            if (user == null) throw new Exception("");
+
             var peSound = Sounds.getByName(sound.sound().identifier());
             if (peSound == null) {
                 return;
@@ -56,15 +59,15 @@ public class VelocityPlayerWrapper implements CirrusPlayerWrapper {
             SoundCategory category = mapSoundCategory(sound.soundCategory());
 
             WrapperPlayServerSoundEffect packet = new WrapperPlayServerSoundEffect(
-                peSound,
-                category,
-                new Vector3i(0, 64, 0),
-                sound.volume(),
-                sound.pitch()
+                    peSound,
+                    category,
+                    new Vector3d(0, 64, 0),
+                    sound.volume(),
+                    sound.pitch()
             );
 
             user.sendPacket(packet);
-        } catch (Exception e) {
+        } catch (Exception _) {
             // Silently fail if sound sending fails
         }
     }
@@ -89,6 +92,6 @@ public class VelocityPlayerWrapper implements CirrusPlayerWrapper {
 
     @Override
     public void sendMessage(String message) {
-        player.sendMessage(LegacyComponentSerializer.legacy('\u00a7').deserialize(Utils.colorize(message)));
+        player.sendMessage(MiniMessage.miniMessage().deserialize(message));
     }
 }

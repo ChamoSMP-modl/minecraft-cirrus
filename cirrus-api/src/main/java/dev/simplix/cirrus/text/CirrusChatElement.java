@@ -1,15 +1,15 @@
 package dev.simplix.cirrus.text;
 
-import java.util.Objects;
-import javax.annotation.Nullable;
-import lombok.NonNull;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
+
+import java.util.Objects;
 
 public final class CirrusChatElement {
 
-    private static final LegacyComponentSerializer LEGACY_SERIALIZER =
-        LegacyComponentSerializer.legacySection();
+    private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
 
     private final Component component;
     private String cachedLegacyText;
@@ -22,14 +22,14 @@ public final class CirrusChatElement {
         return new CirrusChatElement(component);
     }
 
-    public static CirrusChatElement ofLegacyText(@Nullable String legacyText) {
-        if (legacyText == null || legacyText.isEmpty()) {
+    public static CirrusChatElement ofMiniMessage(@Nullable String mmText) {
+        if (mmText == null || mmText.isEmpty()) {
             return new CirrusChatElement(Component.empty());
         }
-        String colorized = legacyText.replace("&", "\u00a7");
-        Component component = LEGACY_SERIALIZER.deserialize(colorized);
+
+        Component component = MINI_MESSAGE.deserialize(mmText);
         CirrusChatElement element = new CirrusChatElement(component);
-        element.cachedLegacyText = colorized;
+        element.cachedLegacyText = mmText;
         return element;
     }
 
@@ -41,16 +41,16 @@ public final class CirrusChatElement {
         return component;
     }
 
-    public String asLegacyText() {
+    public String asMiniMessageString() {
         if (cachedLegacyText == null) {
-            cachedLegacyText = LEGACY_SERIALIZER.serialize(component);
+            cachedLegacyText = MINI_MESSAGE.serialize(component);
         }
         return cachedLegacyText;
     }
 
     public boolean isEmpty() {
         return component.equals(Component.empty()) ||
-               (cachedLegacyText != null && cachedLegacyText.isEmpty());
+                (cachedLegacyText != null && cachedLegacyText.isEmpty());
     }
 
     @Override
@@ -68,6 +68,6 @@ public final class CirrusChatElement {
 
     @Override
     public String toString() {
-        return asLegacyText();
+        return asMiniMessageString();
     }
 }

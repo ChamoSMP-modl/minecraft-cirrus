@@ -1,0 +1,8 @@
+[versions]
+packetevents = "2.14.0"
+
+[libraries]
+
+packetevents-velocity = { module = "com.github.retrooper:packetevents-velocity", version.ref = "packetevents" }
+packetevents-spigot = { module = "com.github.retrooper:packetevents-spigot", version.ref = "packetevents" }
+packetevents-api = { module = "com.github.retrooper:packetevents-api", version.ref = "packetevents" }

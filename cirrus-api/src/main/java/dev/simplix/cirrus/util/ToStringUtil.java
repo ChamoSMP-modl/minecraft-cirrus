@@ -2,7 +2,7 @@ package dev.simplix.cirrus.util;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Copied from Guava because BungeeCord relies on a very old version of it, and we don't want to

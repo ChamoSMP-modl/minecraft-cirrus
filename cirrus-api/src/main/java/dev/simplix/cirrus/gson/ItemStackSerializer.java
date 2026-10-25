@@ -32,11 +32,11 @@ public class ItemStackSerializer implements JsonSerializer<CirrusBaseItemStack> 
         jsonObject.add("hide-flags", new JsonPrimitive(src.hideFlags()));
 
         if (src.displayName() != null && !src.displayName().isEmpty()) {
-            jsonObject.add("display-name", new JsonPrimitive(src.displayName().asLegacyText()));
+            jsonObject.add("display-name", new JsonPrimitive(src.displayName().asMiniMessageString()));
         }
 
         final List<String> lores = src.lore().stream()
-            .map(CirrusChatElement::asLegacyText)
+            .map(CirrusChatElement::asMiniMessageString)
             .collect(Collectors.toList());
         if (!lores.isEmpty()) {
             jsonObject.add("lore", context.serialize(lores));

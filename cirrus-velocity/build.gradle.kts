@@ -1,40 +1,10 @@
 plugins {
-    id("java")
-    id("com.gradleup.shadow") version "9.3.1"
-}
-
-group = "gg.modl.minecraft.cirrus"
-version = "4.2.4"
-
-repositories {
-    mavenCentral()
-    maven(url = "https://papermc.io/repo/repository/maven-public/")
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    id("all")
 }
 
 dependencies {
-    implementation(project(":cirrus-api"))
-    implementation(project(":cirrus-common"))
+    compileOnly("com.velocitypowered:velocity-api:4.3.0")
+    compileOnly(libs.packetevents.velocity)
 
-    compileOnly("com.velocitypowered:velocity-api:3.3.0-SNAPSHOT")
-//    annotationProcessor("com.velocitypowered:velocity-api:3.5.0-SNAPSHOT")
-
-    compileOnly("gg.modl.minecraft.packetevents:packetevents-velocity:${rootProject.extra["packetEventsVersion"]}")
-}
-
-tasks {
-    assemble {
-        dependsOn(shadowJar)
-    }
-
-    shadowJar {
-        archiveBaseName.set("Cirrus-Velocity")
-        archiveClassifier.set("")
-        relocate("com.github.retrooper.packetevents", "gg.modl.libs.packetevents.api")
-        relocate("io.github.retrooper.packetevents", "gg.modl.libs.packetevents.impl")
-    }
+    api(project(":cirrus-common"))
 }

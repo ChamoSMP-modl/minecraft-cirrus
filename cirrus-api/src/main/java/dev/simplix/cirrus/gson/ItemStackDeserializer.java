@@ -38,13 +38,13 @@ public class ItemStackDeserializer implements JsonDeserializer<CirrusBaseItemSta
                                          : new ArrayList<>();
 
         final CirrusItem item = new CirrusItem(type, (byte) amount, durability)
-            .displayName(CirrusChatElement.ofLegacyText(displayName))
+            .displayName(CirrusChatElement.ofMiniMessage(displayName))
             .nbtData(new NBTCompound())
             .hideFlags(hideflags);
 
         if (loreStrings != null) {
             item.lore(loreStrings.stream()
-                .map(CirrusChatElement::ofLegacyText)
+                .map(CirrusChatElement::ofMiniMessage)
                 .collect(Collectors.toList()));
         }
 

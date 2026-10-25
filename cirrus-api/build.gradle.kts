@@ -1,17 +1,13 @@
 plugins {
-    id("java")
-    application
+    id("all")
 }
 
-group = "gg.modl.minecraft.cirrus"
-version = "4.2.4"
-
 dependencies {
-    compileOnly("gg.modl.minecraft.packetevents:packetevents-api:${rootProject.extra["packetEventsVersion"]}")
+    compileOnly(libs.packetevents.api)
 
-    // Adventure for text components
-    compileOnly("net.kyori:adventure-api:4.14.0")
-    compileOnly("net.kyori:adventure-text-serializer-legacy:4.14.0")
-    testImplementation("net.kyori:adventure-api:4.14.0")
-    testImplementation("net.kyori:adventure-text-serializer-legacy:4.14.0")
+    compileOnly("net.kyori:adventure-api:5.2.0")
+    compileOnly("net.kyori:adventure-text-minimessage:5.2.0")
+
+    testImplementation("net.kyori:adventure-api:5.2.0")
+    testImplementation("net.kyori:adventure-text-minimessage:5.2.0")
 }

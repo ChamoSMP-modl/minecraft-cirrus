@@ -15,7 +15,7 @@ import com.github.retrooper.packetevents.protocol.player.ClientVersion;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.Set;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An interface representing a menu schematic, which is a blueprint for a menu. It defines the

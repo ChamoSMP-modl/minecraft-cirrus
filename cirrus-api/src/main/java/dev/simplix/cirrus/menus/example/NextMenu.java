@@ -25,9 +25,9 @@ public class NextMenu extends SimpleMenu {
         title("Next");
         type(CirrusInventoryType.GENERIC_9X5);
 
-        set(CirrusItem.of(iterator.next(), CirrusChatElement.ofLegacyText("§aClick")).slot(9 * 2 + 4).actionHandler("click"));
+        set(CirrusItem.of(iterator.next(), CirrusChatElement.ofMiniMessage("§aClick")).slot(9 * 2 + 4).actionHandler("click"));
 
-        row(5).get(8).set(CirrusItem.of(CirrusItemType.DARK_OAK_DOOR, CirrusChatElement.ofLegacyText("§7Back")).actionHandler("back"));
+        row(5).get(8).set(CirrusItem.of(CirrusItemType.DARK_OAK_DOOR, CirrusChatElement.ofMiniMessage("§7Back")).actionHandler("back"));
 
     }
 

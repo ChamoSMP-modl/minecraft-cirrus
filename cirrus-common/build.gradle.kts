@@ -1,17 +1,13 @@
 plugins {
-    id("java")
+    id("all")
 }
 
-group = "gg.modl.minecraft.cirrus"
-version = "4.2.4"
-
 dependencies {
-    implementation(project(":cirrus-api"))
-    compileOnly("gg.modl.minecraft.packetevents:packetevents-api:${rootProject.extra["packetEventsVersion"]}")
-    compileOnly("net.kyori:adventure-api:4.14.0")
+    api(project(":cirrus-api"))
 
-    testImplementation("gg.modl.minecraft.packetevents:packetevents-api:${rootProject.extra["packetEventsVersion"]}")
-    testImplementation("net.kyori:adventure-api:4.14.0")
-    testImplementation("net.kyori:adventure-nbt:4.14.0")
-    testImplementation("org.jspecify:jspecify:1.0.0")
+    compileOnly("net.kyori:adventure-api:5.2.0")
+    compileOnly(libs.packetevents.api)
+
+    testImplementation("net.kyori:adventure-api:5.2.0")
+    testImplementation(libs.packetevents.api)
 }

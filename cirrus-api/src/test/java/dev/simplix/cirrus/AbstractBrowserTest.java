@@ -46,7 +46,7 @@ public class AbstractBrowserTest {
 
             @Override
             protected CirrusItem map(String element) {
-                return CirrusItem.of(CirrusItemType.STONE, CirrusChatElement.ofLegacyText(element), CirrusChatElement.ofLegacyText("this is a test"));
+                return CirrusItem.of(CirrusItemType.STONE, CirrusChatElement.ofMiniMessage(element), CirrusChatElement.ofMiniMessage("this is a test"));
             }
 
             @Override
@@ -54,7 +54,7 @@ public class AbstractBrowserTest {
                 int bottomRowStart = menuSize - 9;
                 return Collections.singletonMap(
                     bottomRowStart,
-                    CirrusItem.of(CirrusItemType.ACACIA_BOAT, CirrusChatElement.ofLegacyText("next page"))
+                    CirrusItem.of(CirrusItemType.ACACIA_BOAT, CirrusChatElement.ofMiniMessage("next page"))
                 );
             }
         };
@@ -96,7 +96,7 @@ public class AbstractBrowserTest {
 
         @Override
         protected CirrusItem map(String element) {
-            return CirrusItem.of(CirrusItemType.STONE, CirrusChatElement.ofLegacyText(element));
+            return CirrusItem.of(CirrusItemType.STONE, CirrusChatElement.ofMiniMessage(element));
         }
     }
 

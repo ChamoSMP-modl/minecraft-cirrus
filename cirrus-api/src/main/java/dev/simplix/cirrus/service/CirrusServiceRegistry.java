@@ -2,8 +2,8 @@ package dev.simplix.cirrus.service;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import javax.annotation.Nullable;
-import lombok.NonNull;
+import org.jspecify.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public final class CirrusServiceRegistry {
 

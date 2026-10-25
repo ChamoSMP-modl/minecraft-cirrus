@@ -58,7 +58,7 @@ public abstract class AbstractPacketMenuBuildService implements MenuBuildService
         CirrusInventoryType invType = menu.type();
         int size = invType.size();
 
-        CirrusChatElement titleElement = CirrusChatElement.ofLegacyText(menu.title() != null ? menu.title() : "");
+        CirrusChatElement titleElement = CirrusChatElement.ofMiniMessage(menu.title() != null ? menu.title() : "");
         Component title = ComponentHelper.removeItalic(titleElement.asComponent());
 
         CirrusBaseItemStack[] items = new CirrusBaseItemStack[size];

@@ -12,9 +12,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import lombok.Getter;
-import lombok.NonNull;
+import org.jspecify.annotations.NonNull;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
@@ -144,7 +144,7 @@ public class CirrusItem implements CirrusBaseItemStack {
         if (legacyText == null) {
             return this;
         }
-        this.displayName = CirrusChatElement.ofLegacyText(legacyText);
+        this.displayName = CirrusChatElement.ofMiniMessage(legacyText);
         return this;
     }
 
@@ -177,7 +177,7 @@ public class CirrusItem implements CirrusBaseItemStack {
     }
 
     public CirrusItem addLore(@NonNull String legacyText) {
-        this.lore.add(CirrusChatElement.ofLegacyText(legacyText));
+        this.lore.add(CirrusChatElement.ofMiniMessage(legacyText));
         return this;
     }
 

@@ -4,10 +4,11 @@ import dev.simplix.cirrus.item.CirrusBaseItemStack;
 import dev.simplix.cirrus.item.CirrusItem;
 import dev.simplix.cirrus.menu.DisplayedMenu;
 import dev.simplix.cirrus.player.CirrusPlayerWrapper;
+import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Nullable;
-import lombok.NonNull;
 
 public final class Click {
 

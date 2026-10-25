@@ -26,7 +26,7 @@ public class CirrusItemSerializer implements JsonSerializer<CirrusItem> {
             RuntimeTypeAdapterFactory.TYPE,
             new JsonPrimitive(src.getClass().getSimpleName().toLowerCase()));
 
-        final String displayName = src.displayName() == null ? null : src.displayName().asLegacyText();
+        final String displayName = src.displayName() == null ? null : src.displayName().asMiniMessageString();
         AbstractMenuEffect<String> effect = src.displayNameEffect();
         if (displayName != null && effect == null) {
             jsonObject.add("display-name", new JsonPrimitive(displayName));
@@ -40,7 +40,7 @@ public class CirrusItemSerializer implements JsonSerializer<CirrusItem> {
             jsonObject.add("type", new JsonPrimitive(src.itemType().identifier()));
         }
         final List<String> lores = src.lore().stream()
-            .map(CirrusChatElement::asLegacyText)
+            .map(CirrusChatElement::asMiniMessageString)
             .collect(Collectors.toList());
         jsonObject.add("lore", lores.isEmpty() ? new JsonArray() : context.serialize(lores));
         jsonObject.add("amount", new JsonPrimitive(src.amount()));

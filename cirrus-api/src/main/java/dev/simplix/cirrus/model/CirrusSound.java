@@ -1,7 +1,7 @@
 package dev.simplix.cirrus.model;
 
 import java.util.Objects;
-import lombok.NonNull;
+import org.jspecify.annotations.NonNull;
 
 public final class CirrusSound {
 

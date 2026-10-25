@@ -16,8 +16,8 @@ public class SelectMenu extends SimpleMenu {
 
         set(Items.withSpectrumEffect(
                 CirrusItemType.STONE, "Next Menu",
-                CirrusChatElement.ofLegacyText("§7Click here to go"),
-                CirrusChatElement.ofLegacyText("§7to the next menu"))
+                CirrusChatElement.ofMiniMessage("§7Click here to go"),
+                CirrusChatElement.ofMiniMessage("§7to the next menu"))
             .slot(12)
             .actionHandler("next")
         );
@@ -25,8 +25,8 @@ public class SelectMenu extends SimpleMenu {
         set(Items.withSpectrumEffect(
                 CirrusItemType.STONE,
                 "Item Type Browser",
-                CirrusChatElement.ofLegacyText("§7Click here to go"),
-                CirrusChatElement.ofLegacyText("§7to the item-type menu"))
+                CirrusChatElement.ofMiniMessage("§7Click here to go"),
+                CirrusChatElement.ofMiniMessage("§7to the item-type menu"))
             .actionHandler("browser")
             .slot(14)
         );

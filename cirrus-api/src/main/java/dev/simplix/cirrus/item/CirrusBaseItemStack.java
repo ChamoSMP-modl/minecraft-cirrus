@@ -4,8 +4,8 @@ import com.github.retrooper.packetevents.protocol.nbt.NBTCompound;
 import dev.simplix.cirrus.text.CirrusChatElement;
 import java.util.List;
 import java.util.Set;
-import javax.annotation.Nullable;
-import lombok.NonNull;
+import org.jspecify.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 public interface CirrusBaseItemStack {
 

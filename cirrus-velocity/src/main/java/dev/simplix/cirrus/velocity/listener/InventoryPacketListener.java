@@ -9,7 +9,6 @@ import com.velocitypowered.api.proxy.Player;
 
 @Slf4j
 public class InventoryPacketListener extends AbstractInventoryPacketListener {
-
     public InventoryPacketListener(InventoryTracker inventoryTracker, VelocityMenuBuildService menuBuildService) {
         super(inventoryTracker, menuBuildService);
     }
