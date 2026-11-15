@@ -1,0 +1,23 @@
+version: 2
+
+registries:
+  codemc:
+    type: maven-repository
+    url: https://repo.codemc.io/repository/maven-releases/
+  papermc:
+    type: maven-repository
+    url: https://repo.papermc.io/repository/maven-public/
+  minecraft:
+    type: maven-repository
+    url: https://libraries.minecraft.net
+
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    registries:
+      - codemc
+      - papermc
+      - minecraft
+
+    schedule:
+      interval: "daily"
