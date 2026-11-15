@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    compileOnly("com.velocitypowered:velocity-api:4.3.0")
+    compileOnly("com.velocitypowered:velocity-api:4.3.1")
     compileOnly(libs.packetevents.velocity)
 
     api(project(":cirrus-common"))
